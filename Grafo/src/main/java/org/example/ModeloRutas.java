@@ -31,11 +31,16 @@ public class ModeloRutas<T> implements GrafosImplemnt<T> {
 
     @Override
     public List<T> obtenerVertices() {
-
-       //Pendiente
-
-           return null;
+        List<T> vertices = new ArrayList<>(); // crea una lista vacía de vértices
+        for (Estacion<T> vertice : grafo.keySet()) { // itera sobre los vértices en el mapa
+            vertices.add((T) vertice); // agrega el vértice actual a la lista de vértices
+        }
+        return vertices; // devuelve la lista de vértices
+    }
     }
 
-}
+
+
+
+
 

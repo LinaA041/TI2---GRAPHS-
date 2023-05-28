@@ -1,8 +1,9 @@
 package org.example;
 
-public class Estacion <T>{
+public class Estacion <T> implements Comparable<Estacion<T>> {
     String nombre;
     T tpoBus;
+    Arista arista;
 
     public Estacion(String nombre, T tpoBus) {
         this.nombre = nombre;
@@ -31,5 +32,15 @@ public class Estacion <T>{
                 "nombre='" + nombre + '\'' +
                 ", tpoBus=" + tpoBus +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Estacion<T> o) {
+        int Value = this.nombre.compareTo(o.getNombre());
+        if (Value == 0) {
+
+            
+        }
+        return 0;
     }
 }
