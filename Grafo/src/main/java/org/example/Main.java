@@ -3,33 +3,49 @@ package org.example;
 import org.example.estrucuturas.*;
 
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Grafo<String> grafo = new Grafo<>();
+        GrafoImplement<String> grafo = new Grafo<>();
 
-        // Crear los vértices
-        Vertice<String> a = new Vertice<>("A");
-        Vertice<String> b = new Vertice<>("B");
-        Vertice<String> c = new Vertice<>("C");
-        Vertice<String> d = new Vertice<>("D");
-        // Agregar los vértices al grafo
-        grafo.agregarVertice(a);
-        grafo.agregarVertice(b);
-        grafo.agregarVertice(c);
-        grafo.agregarVertice(d);
-        // Agregar las aristas al grafo
-        grafo.agregarArista(a, b, 1.5);
-        grafo.agregarArista(b, c, 2.0);
-        grafo.agregarArista(c, d, 3.5);
-        grafo.agregarArista(d, a, 2.8);
+        grafo.agregarVertice("A");
+        grafo.agregarVertice("B");
+        grafo.agregarVertice("C");
+        grafo.agregarVertice("D");
+        grafo.agregarVertice("E");
 
-        // Obtener los vecinos de un vértice
-        List<Vertice<String>> vecinos = grafo.obtenerVecinos(a);
-        System.out.println("Vecinos de A: " + vecinos);
+        grafo.agregarArista("A", "B");
+        grafo.agregarArista("A", "C");
+        grafo.agregarArista("B", "D");
+        grafo.agregarArista("C", "E");
+        grafo.agregarArista("D", "E");
 
-        // Obtener todos los vértices del grafo
-        List<Vertice<String>> vertices = grafo.obtenerVertices();
-        System.out.println("Vértices del grafo: " + vertices);
+        System.out.println("Recorrido DFS:");
+        grafo.dfs("A");
+
+        System.out.println("\nRecorrido BFS:");
+        grafo.bfs("A");
+
+        System.out.println("\nDistancias desde el vértice 'A' utilizando Dijkstra:");
+        Map<Vertice<String>, Integer> distanciasDijkstra = grafo.dijkstra("A");
+        for (Map.Entry<Vertice<String>, Integer> entry : distanciasDijkstra.entrySet()) {
+            System.out.println(entry.getKey().getValor() + ": " + entry.getValue());
+        }
+
+        System.out.println("\nMatriz de distancias utilizando Floyd-Warshall:");
+        int[][] distanciasFloydWarshall = grafo.floydWarshall();
+        for (int i = 0; i < distanciasFloydWarshall.length; i++) {
+            for (int j = 0; j < distanciasFloydWarshall[i].length; j++) {
+                System.out.print(distanciasFloydWarshall[i][j] + " ");
+            }
+            System.out.println();
+        }
+        List<String> arbolMinimo = grafo.prim();
+
+        System.out.println("Árbol mínimo de Prim:");
+        for (String arista : arbolMinimo) {
+            System.out.println(arista);
+        }
     }
 }

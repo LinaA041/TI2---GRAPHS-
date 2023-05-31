@@ -1,10 +1,14 @@
 package org.example.estrucuturas;
 
 import java.util.List;
+import java.util.Map;
 
 public interface GrafoImplement<T> {
-    void agregarVertice(Vertice<T> vertice);
-    void agregarArista(Vertice<T> origen, Vertice<T> destino, double peso);
-    List<Vertice<T>> obtenerVecinos(Vertice<T> vertice);
-    List<Vertice<T>> obtenerVertices();
+    void agregarVertice(T valor);
+    void agregarArista(T origen, T destino);
+    void dfs(T inicio);
+    void bfs(T inicio);
+    Map<Vertice<T>, Integer> dijkstra(T inicio);
+    int[][] floydWarshall();
+    List<String> prim();
 }
