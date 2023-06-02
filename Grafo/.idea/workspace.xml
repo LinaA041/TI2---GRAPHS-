@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3695cc55-5ef2-40c6-af99-db70ab948bdb" name="Changes" comment="documentacion">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/estrucuturas/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/estrucuturas/Grafo.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2QZdGiWqMrgvIq8MNSDhWQYpc9l" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Family/Desktop/apo2/APO2-2023-1/Compare",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.estrucuturas" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Family\Desktop\apo2\TI2---GRAPHS-\Grafo" />
+      <recent name="C:\Users\Family\Desktop\apo2\TI2---GRAPHS-\Grafo\src" />
+      <recent name="C:\Users\Family\Desktop\apo2\TI2---GRAPHS-\Grafo\src\main\resources\gson" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="Grafo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3695cc55-5ef2-40c6-af99-db70ab948bdb" name="Changes" comment="" />
+      <created>1685564950913</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685564950913</updated>
+      <workItem from="1685564951859" duration="587000" />
+      <workItem from="1685566950903" duration="4258000" />
+      <workItem from="1685572855736" duration="822000" />
+      <workItem from="1685711869810" duration="12667000" />
+    </task>
+    <task id="LOCAL-00001" summary="algoritmos de DFS,BFS,Dijikstra, floydWarshall y prim (Pendiente calcular pesos)">
+      <created>1685572252923</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685572252924</updated>
+    </task>
+    <task id="LOCAL-00002" summary="arreglando pesos y agregando dependencia json">
+      <created>1685717364356</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685717364356</updated>
+    </task>
+    <task id="LOCAL-00003" summary="arreglando pesos">
+      <created>1685718844985</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685718844985</updated>
+    </task>
+    <task id="LOCAL-00004" summary="gson y documentacion">
+      <created>1685721793708</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685721793708</updated>
+    </task>
+    <task id="LOCAL-00005" summary="documentacion">
+      <created>1685721942985</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685721942985</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="algoritmos de DFS,BFS,Dijikstra, floydWarshall y prim (Pendiente calcular pesos)" />
+    <MESSAGE value="arreglando pesos y agregando dependencia json" />
+    <MESSAGE value="arreglando pesos" />
+    <MESSAGE value="gson y documentacion" />
+    <MESSAGE value="documentacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentacion" />
+  </component>
+</project>

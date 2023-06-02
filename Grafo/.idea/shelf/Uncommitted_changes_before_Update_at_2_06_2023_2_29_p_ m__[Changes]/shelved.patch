@@ -1,0 +1,14 @@
+Index: src/test/java/Test.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/Test.java b/src/test/java/Test.java
+new file mode 100644
+--- /dev/null	(date 1685725697195)
++++ b/src/test/java/Test.java	(date 1685725697195)
+@@ -0,0 +1,3 @@
++public class Test {
++}
++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
+\ No newline at end of file

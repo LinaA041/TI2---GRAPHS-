@@ -1,0 +1,1 @@
+{"vertices":{"a":{"valor":"a","vecinos":[]},"b":{"valor":"b","vecinos":[]},"c":{"valor":"c","vecinos":[]},"d":{"valor":"d","vecinos":[]},"e":{"valor":"e","vecinos":[]}},"aristas":[{"peso":1.0},{"peso":2.0},{"peso":2.0},{"peso":1.0},{"peso":4.0}]}
