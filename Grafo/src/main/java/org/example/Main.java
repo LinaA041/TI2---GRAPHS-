@@ -15,9 +15,9 @@ public class Main {
         grafo.agregarVertice("D");
         grafo.agregarVertice("E");
 
-        grafo.agregarArista("A", "B",2);
-        grafo.agregarArista("A", "C",3);
-        grafo.agregarArista("B", "D",5);
+        grafo.agregarArista("A", "B",1);
+        grafo.agregarArista("A", "C",2);
+        grafo.agregarArista("B", "D",2);
         grafo.agregarArista("C", "E",1);
         grafo.agregarArista("D", "E",4);
 
