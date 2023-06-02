@@ -72,17 +72,17 @@ public class Grafo<T> implements GrafoImplement<T>{
             }
         }
     }
-    public Map<Vertice<T>, Integer> dijkstra(T inicio) {
+    public Map<Vertice<T>, Double> dijkstra(T inicio) {
         // Inicializar las estructuras de datos
-        Map<Vertice<T>, Integer> distancias = new HashMap<>();
-        PriorityQueue<Vertice<T>> colaPrioridad = new PriorityQueue<>(Comparator.comparingInt(distancias::get));
+        Map<Vertice<T>, Double> distancias = new HashMap<>();
+        PriorityQueue<Vertice<T>> colaPrioridad = new PriorityQueue<>(Comparator.comparingDouble(distancias::get));
         Map<Vertice<T>, Vertice<T>> padres = new HashMap<>();
 
         // Establecer todas las distancias como infinito excepto el vértice de inicio
         for (Vertice<T> vertice : vertices.values()) {
-            distancias.put(vertice, Integer.MAX_VALUE);
+            distancias.put(vertice, Double.MAX_VALUE);
         }
-        distancias.put(vertices.get(inicio), 0);
+        distancias.put(vertices.get(inicio), 0.0);
 
         // Agregar el vértice de inicio a la cola de prioridad
         colaPrioridad.offer(vertices.get(inicio));
@@ -94,25 +94,29 @@ public class Grafo<T> implements GrafoImplement<T>{
             List<Vertice<T>> vecinos = verticeActual.getVecinos();
 
             for (Vertice<T> vecino : vecinos) {
-                int pesoArista = 1; // Peso predeterminado, puedes ajustarlo según tu implementación
+                for (int i = 0; i < aristas.size() ; i++) {
 
-                // Calcular la nueva distancia desde el inicio hasta el vecino
-                int nuevaDistancia = distancias.get(verticeActual) + pesoArista;
+                    double pesoArista = aristas.get(i).getPeso(); // Peso predeterminado, puedes ajustarlo según tu implementación
 
-                // Si la nueva distancia es menor que la distancia actual, actualizarla
-                if (nuevaDistancia < distancias.get(vecino)) {
-                    distancias.put(vecino, nuevaDistancia);
-                    padres.put(vecino, verticeActual);
-                    colaPrioridad.offer(vecino);
+                    // Calcular la nueva distancia desde el inicio hasta el vecino
+                    double nuevaDistancia = distancias.get(verticeActual) + pesoArista;
+
+                    // Si la nueva distancia es menor que la distancia actual, actualizarla
+                    if (nuevaDistancia < distancias.get(vecino)) {
+                        distancias.put(vecino, nuevaDistancia);
+                        padres.put(vecino, verticeActual);
+                        colaPrioridad.offer(vecino);
+                    }
                 }
+
             }
         }
 
         return distancias;
     }
-    public int[][] floydWarshall() {
+    public double[][] floydWarshall() {
         int n = vertices.size();
-        int[][] distancias = new int[n][n];
+        double[][] distancias = new double[n][n];
 
         // Inicializar la matriz de distancias con valores infinitos excepto la diagonal
         for (int i = 0; i < n; i++) {
@@ -125,8 +129,11 @@ public class Grafo<T> implements GrafoImplement<T>{
             int i = getIndex(vertice);
             List<Vertice<T>> vecinos = vertice.getVecinos();
             for (Vertice<T> vecino : vecinos) {
-                int j = getIndex(vecino);
-                distancias[i][j] = 1; // Peso predeterminado, puedes ajustarlo según tu implementación
+                for (int k = 0; k < aristas.size() ; k++) {
+                    int j = getIndex(vecino);
+                    distancias[i][j] = aristas.get(k).getPeso(); // Peso predeterminado, puedes ajustarlo según tu implementación
+                }
+
             }
         }
 

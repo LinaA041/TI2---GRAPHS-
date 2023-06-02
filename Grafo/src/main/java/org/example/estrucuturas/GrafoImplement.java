@@ -8,7 +8,7 @@ public interface GrafoImplement<T> {
     void agregarArista(T origen, T destino, double peso);
     void dfs(T inicio);
     void bfs(T inicio);
-    Map<Vertice<T>, Integer> dijkstra(T inicio);
-    int[][] floydWarshall();
+    Map<Vertice<T>, Double> dijkstra(T inicio);
+    double[][] floydWarshall();
     List<String> prim();
 }

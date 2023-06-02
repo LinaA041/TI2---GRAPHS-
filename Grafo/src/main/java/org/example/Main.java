@@ -16,10 +16,10 @@ public class Main {
         grafo.agregarVertice("E");
 
         grafo.agregarArista("A", "B",2);
-        grafo.agregarArista("A", "C",4);
+        grafo.agregarArista("A", "C",3);
         grafo.agregarArista("B", "D",5);
-        grafo.agregarArista("C", "E",5);
-        grafo.agregarArista("D", "E",6);
+        grafo.agregarArista("C", "E",1);
+        grafo.agregarArista("D", "E",4);
 
         System.out.println("Recorrido DFS:");
         grafo.dfs("A");
@@ -28,13 +28,13 @@ public class Main {
         grafo.bfs("A");
 
         System.out.println("\nDistancias desde el vértice 'A' utilizando Dijkstra:");
-        Map<Vertice<String>, Integer> distanciasDijkstra = grafo.dijkstra("A");
-        for (Map.Entry<Vertice<String>, Integer> entry : distanciasDijkstra.entrySet()) {
+        Map<Vertice<String>, Double> distanciasDijkstra = grafo.dijkstra("A");
+        for (Map.Entry<Vertice<String>, Double> entry : distanciasDijkstra.entrySet()) {
             System.out.println(entry.getKey().getValor() + ": " + entry.getValue());
         }
 
         System.out.println("\nMatriz de distancias utilizando Floyd-Warshall:");
-        int[][] distanciasFloydWarshall = grafo.floydWarshall();
+        double[][] distanciasFloydWarshall = grafo.floydWarshall();
         for (int i = 0; i < distanciasFloydWarshall.length; i++) {
             for (int j = 0; j < distanciasFloydWarshall[i].length; j++) {
                 System.out.print(distanciasFloydWarshall[i][j] + " ");
