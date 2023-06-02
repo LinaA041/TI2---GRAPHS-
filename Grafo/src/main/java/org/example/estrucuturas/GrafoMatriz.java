@@ -65,7 +65,6 @@ public class GrafoMatriz<T> implements GrafoImplement<T> {
         }
     }
 
-
     @Override
     public void bfs(T inicio) {
         Set<T> visitados = new HashSet<>();
@@ -92,54 +91,6 @@ public class GrafoMatriz<T> implements GrafoImplement<T> {
 
     @Override
     public Map<Vertice<T>, Double> dijkstra(T inicio) {
-        Integer inicioIndex = indices.get(inicio);
-
-        if (inicioIndex != null) {
-            // Inicializar las estructuras de datos
-            Map<Integer, Double> distancias = new HashMap<>();
-            Map<Integer, Boolean> visitados = new HashMap<>();
-            PriorityQueue<Vertice<T>> colaPrioridad = new PriorityQueue<>(Comparator.comparingDouble(Vertice::getPeso));
-            Map<Vertice<T>, Double> resultado = new HashMap<>();
-
-            for (int i = 0; i < vertices.size(); i++) {
-                if (i == inicioIndex) {
-                    distancias.put(i, 0.0);
-                } else {
-                    distancias.put(i, Double.POSITIVE_INFINITY);
-                }
-                visitados.put(i, false);
-                colaPrioridad.offer(new Vertice<>(vertices.get(i), distancias.get(i)));
-            }
-
-            // Aplicar el algoritmo de Dijkstra
-            while (!colaPrioridad.isEmpty()) {
-                Vertice<T> verticeActual = colaPrioridad.poll();
-                int indiceActual = indices.get(verticeActual.getValor());
-                visitados.put(indiceActual, true);
-
-                for (int i = 0; i < vertices.size(); i++) {
-                    if (matrizAdyacencia[indiceActual][i] != 0 && !visitados.get(i)) {
-                        double pesoArista = matrizAdyacencia[indiceActual][i];
-                        double distanciaActual = distancias.get(i);
-                        double distanciaNueva = distancias.get(indiceActual) + pesoArista;
-
-                        if (distanciaNueva < distanciaActual) {
-                            distancias.put(i, distanciaNueva);
-                            colaPrioridad.removeIf(v -> v.getValor().equals(vertices.get(i)));
-                            colaPrioridad.offer(new Vertice<>(vertices.get(i), distanciaNueva));
-                        }
-                    }
-                }
-            }
-
-            // Construir el resultado final
-            for (int i = 0; i < vertices.size(); i++) {
-                resultado.put(new Vertice<>(vertices.get(i), distancias.get(i)), distancias.get(i));
-            }
-
-            return resultado;
-        }
-
         return null;
     }
 
@@ -177,6 +128,40 @@ public class GrafoMatriz<T> implements GrafoImplement<T> {
 
     @Override
     public List<String> prim() {
-        return null;
+        int n = vertices.size();
+        List<String> aristasMST = new ArrayList<>();
+        Set<Integer> visitados = new HashSet<>();
+        PriorityQueue<Arista<T>> colaPrioridad = new PriorityQueue<>(Comparator.comparingDouble(Arista::getPeso));
+        int inicio = 0;
+
+        visitados.add(inicio);
+
+        // Inicializar la cola de prioridad con las aristas adyacentes al vértice inicial
+        for (int i = 0; i < n; i++) {
+            if (matrizAdyacencia[inicio][i] != 0) {
+                colaPrioridad.offer(new Arista<>(new Vertice<>(vertices.get(inicio)), new Vertice<>(vertices.get(i)), matrizAdyacencia[inicio][i]));
+            }
+        }
+
+        // Aplicar el algoritmo de Prim
+        while (!colaPrioridad.isEmpty()) {
+            Arista<T> aristaActual = colaPrioridad.poll();
+            Vertice<T> origen = aristaActual.getOrigen();
+            Vertice<T> destino = aristaActual.getDestino();
+
+            if (!visitados.contains(indices.get(destino.getValor()))) {
+                visitados.add(indices.get(destino.getValor()));
+                aristasMST.add(aristaActual.toString());
+
+                // Agregar las aristas adyacentes al destino a la cola de prioridad
+                for (int i = 0; i < n; i++) {
+                    if (matrizAdyacencia[indices.get(destino.getValor())][i] != 0 && !visitados.contains(i)) {
+                        colaPrioridad.offer(new Arista<>(destino, new Vertice<>(vertices.get(i)), matrizAdyacencia[indices.get(destino.getValor())][i]));
+                    }
+                }
+            }
+        }
+
+        return aristasMST;
     }
 }
