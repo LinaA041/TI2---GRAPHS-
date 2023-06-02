@@ -15,11 +15,11 @@ public class Main {
         grafo.agregarVertice("D");
         grafo.agregarVertice("E");
 
-        grafo.agregarArista("A", "B");
-        grafo.agregarArista("A", "C");
-        grafo.agregarArista("B", "D");
-        grafo.agregarArista("C", "E");
-        grafo.agregarArista("D", "E");
+        grafo.agregarArista("A", "B",2);
+        grafo.agregarArista("A", "C",4);
+        grafo.agregarArista("B", "D",5);
+        grafo.agregarArista("C", "E",5);
+        grafo.agregarArista("D", "E",6);
 
         System.out.println("Recorrido DFS:");
         grafo.dfs("A");

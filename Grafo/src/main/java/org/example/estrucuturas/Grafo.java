@@ -3,9 +3,11 @@ import java.util.*;
 
 public class Grafo<T> implements GrafoImplement<T>{
     private Map<T, Vertice<T>> vertices;
+    private ArrayList<Arista<T>> aristas;
 
     public Grafo() {
         this.vertices = new HashMap<>();
+        this.aristas = new ArrayList<>();
     }
 
     @Override
@@ -14,7 +16,7 @@ public class Grafo<T> implements GrafoImplement<T>{
     }
 
     @Override
-    public void agregarArista(T origen, T destino) {
+    public void agregarArista(T origen, T destino, double peso) {
         Vertice<T> v1 = vertices.get(origen);
         Vertice<T> v2 = vertices.get(destino);
 
@@ -22,6 +24,8 @@ public class Grafo<T> implements GrafoImplement<T>{
             v1.agregarVecino(v2);
             v2.agregarVecino(v1);
         }
+        aristas.add(new Arista<T>(v1,v2,peso));
+
     }
 
     @Override
@@ -191,8 +195,7 @@ public class Grafo<T> implements GrafoImplement<T>{
     private int calcularPeso(Vertice<T> origen, Vertice<T> destino) {
         // Aquí puedes implementar la lógica para calcular el peso de la arista
         // entre el origen y el destino según tu implementación específica
-        // En este ejemplo, se asume que los vértices tienen un atributo 'peso'
-        // que representa el peso de la arista entre ellos
+
         return 0;
     }
 

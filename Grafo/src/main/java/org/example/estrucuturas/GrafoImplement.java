@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface GrafoImplement<T> {
     void agregarVertice(T valor);
-    void agregarArista(T origen, T destino);
+    void agregarArista(T origen, T destino, double peso);
     void dfs(T inicio);
     void bfs(T inicio);
     Map<Vertice<T>, Integer> dijkstra(T inicio);
