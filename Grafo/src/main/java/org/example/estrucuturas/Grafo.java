@@ -171,8 +171,11 @@ public class Grafo<T> implements GrafoImplement<T>{
 
         // Agregar las aristas del primer vértice a la cola de prioridad
         for (Vertice<T> vecino : primerVertice.getVecinos()) {
-            Arista<T> arista = new Arista<>(primerVertice, vecino, calcularPeso(primerVertice, vecino));
-            colaPrioridad.offer(arista);
+            for (int i = 0; i <aristas.size() ; i++) {
+                Arista<T> arista = new Arista<>(primerVertice, vecino,aristas.get(i).getPeso() );
+                colaPrioridad.offer(arista);
+            }
+
         }
 
         while (!colaPrioridad.isEmpty()) {
@@ -191,19 +194,17 @@ public class Grafo<T> implements GrafoImplement<T>{
             // Agregar las aristas del destino a la cola de prioridad
             for (Vertice<T> vecino : destino.getVecinos()) {
                 if (!visitados.contains(vecino)) {
-                    Arista<T> arista = new Arista<>(destino, vecino, calcularPeso(destino, vecino));
-                    colaPrioridad.offer(arista);
+                    for (int i = 0; i < aristas.size() ; i++) {
+                        Arista<T> arista = new Arista<>(destino, vecino, aristas.get(i).getPeso());
+                        colaPrioridad.offer(arista);
+                    }
+
                 }
             }
         }
 
         return arbolMinimo;
     }
-    private int calcularPeso(Vertice<T> origen, Vertice<T> destino) {
-        // Aquí puedes implementar la lógica para calcular el peso de la arista
-        // entre el origen y el destino según tu implementación específica
 
-        return 0;
-    }
 
 }
